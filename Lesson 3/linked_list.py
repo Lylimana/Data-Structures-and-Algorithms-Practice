@@ -1,6 +1,6 @@
 class Node: 
     '''
-    An object for storing a single node of a linked list. 
+    An object for storing a  e node of a linked list. 
     Models two attributes - data and the link to the next node in the list. 
     '''
     data = None 
@@ -59,6 +59,37 @@ class LinkedList:
             else: 
                 current = current.next_node
         return None
+    
+    def insert(self, data, index): 
+        """
+        Inserts a new node containing data containing index position
+        
+        Insertion takes O(1) but finding node at te insertion point takes O(n) time 
+        
+        Overall takes O(n) time
+        """
+        
+        if index == 0: 
+            self.add(data)
+            
+        if index > 0: 
+            new = Node(data)
+            
+            position = index
+            current = self.head
+            
+            while position > 1: 
+                current = current.next_node
+                position -= 1 
+            
+            prev_node = current
+            next_node = current.next_node
+            
+            prev_node.next_node = new 
+            new.next_node = next_node
+        
+    # def remove(self, key): 
+        
         
     def __repr__(self): 
         '''
@@ -79,3 +110,5 @@ class LinkedList:
                 
             current = current.next_node
         return '-> '.join(nodes)
+    
+    

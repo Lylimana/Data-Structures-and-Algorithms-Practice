@@ -10,7 +10,7 @@ print(N1.next_node)
 
 linkedlist = LinkedList()
 
-linkedlist.head = N1 
+linkedlist.head = N1
 
 linkedlist.add(30)
 linkedlist.add(40)
@@ -23,3 +23,8 @@ linkedlist
 # Output: [Head: 60]-> [50]-> [40]-> [30]-> [10]-> [Tail: 20]
 
 print(linkedlist.search(40))
+
+
+print(linkedlist.insert(35, 3))
+
+linkedlist
