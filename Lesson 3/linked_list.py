@@ -64,7 +64,7 @@ class LinkedList:
         """
         Inserts a new node containing data containing index position
         
-        Insertion takes O(1) but finding node at te insertion point takes O(n) time 
+        Insertion takes O(1) but finding node at the insertion point takes O(n) time 
         
         Overall takes O(n) time
         """
@@ -88,8 +88,54 @@ class LinkedList:
             prev_node.next_node = new 
             new.next_node = next_node
         
-    # def remove(self, key): 
+    def remove(self, key): 
+        '''
+        Removes Node containing data tat matches the key 
+        Returns the node or None if key doesn't exist 
+        Takes O(n) time 
+        '''
+        current = self.head
+        previous = None 
+        found = False 
         
+        while current and not found: 
+            if current.data == key and current is self.head: 
+                found = True 
+                self.head = current.next_node
+            elif current.data == key: 
+                found = True 
+                previous.next_node = current.next_node
+            else: 
+                previous = current 
+                current = current.next_node
+                
+        return current 
+    
+    def remove_index(self, index):
+        """
+        Removes a node based on index position
+        
+        Finding node at the deletion point takes O(n) time 
+        
+        Takes O(n) time
+        """
+        if index == 0: 
+            current = self.head
+            self.head = current.next_node 
+                  
+        if index > 0:   
+            
+            position = index
+            current = self.head   
+                   
+            while position > 1: 
+                current = current.next_node
+                position -= 1 
+            
+            previous = current 
+            current = current.next_node
+                
+            previous.next_node = current.next_node
         
     def __repr__(self): 
         '''
