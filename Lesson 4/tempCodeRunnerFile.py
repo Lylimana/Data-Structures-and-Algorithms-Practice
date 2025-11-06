@@ -1,0 +1,1 @@
+sorted = merge_sort(l)

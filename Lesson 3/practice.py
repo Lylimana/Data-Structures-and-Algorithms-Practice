@@ -25,7 +25,7 @@ print(linkedlist.insert(35, 3))
 
 print(linkedlist.remove(35))
 
-linkedlist.remove_index(2)
+linkedlist.remove_index(5)
 
 print(linkedlist)
 
