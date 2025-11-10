@@ -33,10 +33,31 @@ def split(list):
     # right = list[mid:]
     # slicing causes overall time to be O(kn log n)
     
-    import numpy as np 
+    # import numpy as np 
     
-    left, right = np.array_split(list, 2)
+    # left, right = np.array_split(list, 2)
+    # Another attempt as spliting to reduce run time using numpy - discovered might not be as efficient as slicing
+    # Also runs at O(kn log n) but also requires for library to be imported
     
+    counter = 0
+    last = len(list)-1
+    
+    left = []
+    right = []
+    
+    while counter <= last: 
+        midpoint = (counter + last)//2
+        
+        if counter == last: 
+            return left, right
+        elif counter < midpoint:
+            left.append(list[counter])
+            counter = counter + 1
+        else:
+            right.append(list[counter])
+            counter = counter + 1
+    
+            
     return left, right
 
 def merge(left , right):

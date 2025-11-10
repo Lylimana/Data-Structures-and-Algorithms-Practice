@@ -7,9 +7,7 @@ l = random_list_generator(10, 1000)
 sorted = merge_sort(l)
 
 verify_sorted(l)
-# Output: False 
+# Output: False
 
 verify_sorted(sorted)
 # Output: True
-
-

@@ -1,1 +1,2 @@
-sorted = merge_sort(l)
+
+            left.append(list[first])
