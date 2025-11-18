@@ -44,5 +44,7 @@ linkedlist1.add(79)
 linkedlist1.add(92)
 
 print(linkedlist1)
+# Output: [Head: 92]-> [79]-> [57]-> [35]-> [1]-> [81]-> [68]-> [46]-> [24]-> [Tail: 2]
 
 print(merge_sort(linkedlist1))
+# Output: [Head: 1]-> [2]-> [24]-> [35]-> [46]-> [57]-> [68]-> [79]-> [81]-> [Tail: 92]
