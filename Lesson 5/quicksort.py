@@ -4,15 +4,8 @@ numbers = random_array(10, 50)
 
 print(numbers)
 
-def index_of_min(array): 
-    min_index = 0
-    for i in range(len(array)): 
-        if array[i] < array[min_index]: 
-            min_index = i 
-    return min_index
-
 def quicksort(array): 
-    if  len(array) <= 1: 
+    if len(array) <= 1: 
         return array
 
     pivot = array[0]
@@ -20,11 +13,13 @@ def quicksort(array):
     less_than_pivot = []
     greater_than_pivot = []    
 
-    for i in array: 
+    for i in array[1:]: 
         if i < pivot: 
-            less_than_pivot.append(array.pop(i)) 
+            less_than_pivot.append(i) 
         else: 
-            greater_than_pivot.append(array.pop(i))
+            greater_than_pivot.append(i)
+    print("%15s %1s %15s" % (less_than_pivot, pivot , greater_than_pivot))
     return quicksort(less_than_pivot) + [pivot] + quicksort(greater_than_pivot)
 
+print(numbers)
 print(quicksort(numbers))  
