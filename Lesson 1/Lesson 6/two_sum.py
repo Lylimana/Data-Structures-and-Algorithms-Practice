@@ -1,0 +1,22 @@
+def two_sum (arr: list[int], target: int) -> list[int]: 
+    num_to_index = {}
+    
+    for i, num in enumerate(arr): 
+        complement = target - num 
+        if complement in num_to_index: 
+            return [num_to_index[complement], i]
+        num_to_index[num] = i
+    return []
+
+    
+if __name__ == "__main__": 
+    # arr = [int(x) for x in input().split()]
+    # target = int(input())
+    
+    arr = [2, 7,  11, 15]
+
+    target = 9 
+    res = two_sum(arr, target)
+    print(" ".join(map(str, res))) 
+    
+
